@@ -1,0 +1,141 @@
+
+<!DOCType html>
+<html>
+<head>
+
+    <script>
+        function validate() {
+            console.log("calling validate function")
+           var userName = document.getElementById("userName")
+           console.log (userName.value)
+           console.log(userName.value.length)
+           if(userName.value == ' ') {
+        console.log("Please Enter UserName")
+        var errorUserName = document.getElementById("errorUserName")
+        errorUserName.innerHTML ="Please enter UserName"
+        errorUserName.style.color='red'
+         } 
+           var email = document.getElementById("email")
+           console.log(email.value)
+           console.log(email.value.length)
+           if(email.value == ' ') {
+            console.log("Please Enter email")
+            var errorEmail= document .getElementById("errorEmail")
+            errorEmail.innerHTML = "Please enter Email"
+            errorEmail.style.color ='red'
+            }
+        var password = document.getElementById("password")
+           console.log (password.value)
+           console.log(password.value.length)
+           if(password.value == ' ') {
+        console.log("Please Enter password")
+        var errorPassword = document.getElementById("errorPassword")
+        errorPassword.innerHTML ="Please enter password"
+        errorPassword.style.color='red'
+         }
+           var gender = document.formRegister.gender
+           console.log (gender)
+
+           console.log(gender[0])
+           console.log(gender[1])
+           console.log(gender[2]) 
+           console.log(gender[0].checked)
+           console.log(gender[1].checked)
+           console.log(gender[2].checked)
+           if(gender[0].checked == false &&  gender[1].checked ==false && gender[2].checked==false ){
+        console.log("Please Select Gender")
+            }
+            //if (gender[1].checked == false){
+            // console.log("please select gender")
+            //}
+            // if(gender[2].checked == false) {
+            //  console.log("please select gender")
+             //}
+
+             var city = document.formRegister.city
+             console.log(city)
+             if(city.value=="0") {
+            console.log("Please select city")
+            var errorCity = document.getElementsById("errorCity")
+            errorCity.innerHTML ="Please select City"
+            errorCity.style.color ="red"
+             }
+            }
+             //STORAGE localstorage ,sessionstorage
+               
+             //userName
+             //email
+             //password
+             //gender
+             //city
+
+              console.log(userName.value)
+              console.log(Password.value)
+              console.log(email.value)
+
+              var obj = {
+                "username":userName.value,
+                "password":password.value,
+                "email":email.value
+              }
+            
+         console.log(obj) 
+         localStorage.setItem("javascript","storage in localstorage")
+        var objString = JSON.stringify (obj)
+        console.log(objString)
+        localStorage.setItem("xworkzuser", objString)
+        localStorage.getItem("xworkzuser",objString)
+            }
+
+        </script>
+        </head>
+        <body>
+        <!-- form-->
+        <form name ="formregister">
+        
+            <div>
+                <label>Enter UserName</label>
+                <input type ="userName" name= "userName" id="userName">
+                <span id="errorUserName"></span>
+            </div> 
+
+            <div> 
+                <label>Enter email</label>
+                <input type="email" name="email" id="email">
+                <span id="erroremail"></span>
+            </div>
+
+            <div>
+                <label>Enter password</label>
+                <input type = "password" name= "password" id="password">
+                <span id="errorpassword"></span>
+            </div>
+
+            <div>
+                <label>Select gender</label>
+                <input type="radio" name="gender" id="gender">Male
+                <input type="radio" name="gender" id="gender">Female
+                <input type="radio" name="gender" id="gender">others
+            </div> 
+
+               <div>
+                  <label>Select city</label>
+                <select name="City">
+                    <option value="0">--Select city--</option>
+                    <option>Bangalore</option>
+                    <option>Mysore</option>
+                    <option>Mangalore</option>
+                    <option>Bagalkot</option>
+                    <option>Belagaum</option>
+                </select>
+                <span id="errorCity"></span>
+            </div>
+     <!--document.formname.fieldname -->
+
+            
+            <button type ="button" onclick="validate()">Register</button>
+            <button type="reset">Reset</button>
+        </form>
+        </body>
+        </html>
+        <!--When you click button-->
