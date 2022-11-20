@@ -1,0 +1,16 @@
+/* Descendant selector*/
+div p {
+color:rgb(255,0,0);
+  }
+/* child selector */
+div > p {
+color: blue;
+  }
+ /* Adjacent sibling selector */
+div + P { 
+  color: aqua;
+  }
+   /* General Sibling selector */
+    div ~ P { 
+     color: violet;
+    }
